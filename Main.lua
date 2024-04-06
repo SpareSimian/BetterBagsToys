@@ -19,19 +19,6 @@ local function extractColoredText(text)
   end
 end
 
---[[
-
-categories to build:
-Anima
-Korthian Relics
-Conduits
-Stygia
-
-categories shared with other expansions:
-Champion Equipment
-
-]]-- 
-
 categories:RegisterCategoryFunction("ToysFilter", function (data)
 
   -- addon:Print("Candidate for Toys category " .. data.itemInfo.itemName)
