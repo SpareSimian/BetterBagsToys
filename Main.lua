@@ -24,13 +24,28 @@ categories:RegisterCategoryFunction("ToysFilter", function (data)
   -- addon:Print("Candidate for Toys category " .. data.itemInfo.itemName)
 
   local tooltipInfo = C_TooltipInfo.GetOwnedItemByID(data.itemInfo.itemID)
-  
-  for k,v in pairs(tooltipInfo.lines) do
+
+  local mightBeToy = false
+  for _,v in pairs(tooltipInfo.lines) do
     local text = extractColoredText(v.leftText)
     -- addon:Print(data.itemInfo.itemName .. " tooltip line: " .. text)
     if text == "Toy" then
-      return L:G("Toys")
+      mightBeToy = true
     end
+    -- ignore recipes, patterns, and schematics that produce toys
+    if string.find(v.leftText, "Recipe:") then
+      return nil
+    end
+    if string.find(v.leftText, "Pattern:") then
+      return nil
+    end
+    if string.find(v.leftText, "Schematic:") then
+      return nil
+    end
+  end
+
+  if mightBeToy then
+    return L:G("Toys")
   end
 
   return nil
