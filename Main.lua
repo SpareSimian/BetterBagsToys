@@ -29,7 +29,7 @@ categories:RegisterCategoryFunction("ToysFilter", function (data)
   for _,v in pairs(tooltipInfo.lines) do
     local text = extractColoredText(v.leftText)
     -- addon:Print(data.itemInfo.itemName .. " tooltip line: " .. text)
-    if text == "Toy" then
+    if text == "Toy" or text == "Warband Toy" then
       mightBeToy = true
     end
     -- ignore recipes, patterns, and schematics that produce toys

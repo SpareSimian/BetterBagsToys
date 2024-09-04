@@ -1,6 +1,6 @@
-## Interface: 100207
+## Interface: 110002
 ## Title: BetterBagsToys
-## Version: 10.2.7-1
+## Version: 11.0.2-1
 ## Notes: BetterBags filter plugin to create Toys category
 ## Author: SpareSimian
 ## Dependency: BetterBags
